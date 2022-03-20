@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"go-tdd/integer"
+)
 
 const spanish = "Spanish"
 const french = "French"
@@ -29,10 +32,7 @@ func greetingPrefix(language string) (prefix string) {
 	return
 }
 
-func Add(x, y int) int {
-	return x + y
-}
-
 func main() {
 	fmt.Println(Hello("world", "English"))
+	fmt.Println(integer.Add(2, 4))
 }
