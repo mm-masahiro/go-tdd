@@ -36,5 +36,5 @@ func greetingPrefix(language string) (prefix string) {
 func main() {
 	fmt.Println(Hello("world", "English"))
 	fmt.Println(integer.Add(2, 4))
-	fmt.Println(arraySlice.SumAll([]int{1, 3, 5}))
+	fmt.Println(arraySlice.SumAllTails([]int{1, 3, 5}))
 }
