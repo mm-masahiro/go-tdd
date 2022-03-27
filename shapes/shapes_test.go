@@ -3,9 +3,17 @@ package shapes
 import "testing"
 
 func TestArea(t *testing.T) {
-	checkArea := func(t *testing.T, shape Shape, want float64) {
+	checkArea := func(t *testing.T, shape AreaShape, want float64) {
 		t.Helper()
 		got := shape.Area()
+		if got != want {
+			t.Errorf("got %g want %g", got, want)
+		}
+	}
+
+	checkDiameter := func(t *testing.T, shape DiameterShape, want float64) {
+		t.Helper()
+		got := shape.Diameter()
 		if got != want {
 			t.Errorf("got %g want %g", got, want)
 		}
@@ -19,5 +27,6 @@ func TestArea(t *testing.T) {
 	t.Run("circles", func(t *testing.T) {
 		circle := Circle{10}
 		checkArea(t, circle, 314.1592653589793)
+		checkDiameter(t, circle, 20)
 	})
 }
