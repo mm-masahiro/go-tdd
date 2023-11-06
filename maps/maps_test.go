@@ -10,9 +10,11 @@ func TestSearch(t *testing.T) {
 			t.Errorf("got %q want %q given, %q", got, want, "test")
 		}
 	}
-	dictionary := map[string]string{"test": "this is just a test"}
 
-	got := Search(dictionary, "test")
+	dictionary := Dictionary{"test": "this is just a test"}
+
+	got := dictionary.Search("test")
 	want := "this is just a test"
+
 	assertStrings(t, got, want)
 }
